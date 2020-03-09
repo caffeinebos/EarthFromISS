@@ -46,11 +46,11 @@
 import random, os, requests #webbrowser
 
 root_directory = os.path.dirname(os.path.abspath(__file__))
-directory = os.path.join(root_directory, "images")
+image_directory = os.path.join(root_directory, "images")
 
 #Set the directory to where the files will be saved to
-if not os.path.exists(directory):
-    os.mkdir(directory)
+if not os.path.exists(image_directory):
+    os.mkdir(image_directory)
 
 #Create the variable for the text file to save the Valid URLs, to avoid duplicates
 validURLs = os.path.join(root_directory, "ValidURLs.txt")
@@ -83,7 +83,7 @@ for URL in range(1,20):
         #Define how the file name will be saved, as "/, :" are invalid characters, and will confuse the path.
         fname = Format[57:]
         #Open the file to save it with the name.
-        image = open(os.path.join(directory, fname), "wb")
+        image = open(os.path.join(image_directory, fname), "wb")
         #Write the file in chunks up to 25mb (None of the files will be this large)
         for chunk in response.iter_content(25000000):
             image.write(chunk)
