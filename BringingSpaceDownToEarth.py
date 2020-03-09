@@ -46,14 +46,15 @@
 import random, os, requests #webbrowser
 
 root_directory = os.path.dirname(os.path.abspath(__file__))
-image_directory = os.path.join(root_directory, "images")
 
-#Set the directory to where the files will be saved to
+image_directory = os.path.join(root_directory, "images")
 if not os.path.exists(image_directory):
     os.mkdir(image_directory)
 
 #Create the variable for the text file to save the Valid URLs, to avoid duplicates
 validURLs = os.path.join(root_directory, "ValidURLs.txt")
+if not os.path.exists(validURLs):
+    open(validURLs, "a").close()
 
 #Iterate 20 times
 for URL in range(1,20):
