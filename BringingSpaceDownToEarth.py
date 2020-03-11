@@ -47,7 +47,6 @@
 
 #The random, os, and requests modules are required to run this program.
 #Optionally, this program can use the webbrowser module.
-#The random, and os, and webbrowser/
 #If you don't have requests installed, it can be installed with pip. If you're using python v3.4 or later, pip is automatically installed when you download Python.
 #If you don't have Python, you can download it here: https://www.python.org/downloads/
 #What's pip? Pip is an easy way to install additional modules for python.
