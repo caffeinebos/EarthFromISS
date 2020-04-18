@@ -73,8 +73,8 @@ if not os.path.exists(validURLs):
 
 #Iterate 20 times
 for URL in range(1,20):
-    #Generate a random mission number between 10 and 62
-    mission = random.randint(10,62)
+    #Generate a random mission number between 10 and 63
+    mission = random.randint(10,63)
     #Generate a random photo number between 1 and 250,000
     photonum = random.randint(1,250000)
     #Define the format of the URL to be generated.
@@ -118,5 +118,5 @@ for URL in range(1,20):
 fileList = os.listdir(image_directory)
 
 #Print the number of photos downloaded this session, as well as the total number of photos
-print("Wow, those are some cool photos! We found and downloaded a total of " + str(len(PictureCounter)) + " pictures of the Earth! You've now downloaded a total of " + str(len(fileList)) + " unique photos!")
+print("Wow, those are some cool photos! \nWe found and downloaded a total of " + str(len(PictureCounter)) + " pictures of the Earth! \nYou've now downloaded a total of " + str(len(fileList)) + " unique photos!")
 time.sleep(10)
