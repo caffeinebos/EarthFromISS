@@ -119,4 +119,4 @@ fileList = os.listdir(image_directory)
 
 #Print the number of photos downloaded this session, as well as the total number of photos
 print("Wow, those are some cool photos! We found and downloaded a total of " + str(len(PictureCounter)) + " pictures of the Earth! You've now downloaded a total of " + str(len(fileList)) + " unique photos!")
-time.sleep(5)
+time.sleep(10)
