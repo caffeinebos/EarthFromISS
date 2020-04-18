@@ -58,6 +58,9 @@ import random, os, requests #webbrowser
 #This will setup the file to read where this script is located.
 root_directory = os.path.dirname(os.path.abspath(__file__))
 
+#Create a blank list to count the number of pictures downloaded
+PictureCounter = []
+
 #This will create a folder to store the images in. You can name this whatever you'd like.
 image_directory = os.path.join(root_directory, "EarthFromISS")
 if not os.path.exists(image_directory):
@@ -95,6 +98,8 @@ for URL in range(1,20):
     elif Format not in validURLs and URLfalse != 404:
         #Define how the file name will be saved, as "/, :" are invalid characters, and will confuse the path.
         fname = Format[57:]
+        PictureCounter.append(fname)
+        print("Photo found! Downloading " + fname + "...")
         #Open the file to save it with the name.
         image = open(os.path.join(image_directory, fname), "wb")
         #Write the file in chunks up to 25mb (None of the files will be this large)
@@ -108,3 +113,9 @@ for URL in range(1,20):
         URLlist.write(Format + "\n")
         #Close the text file
         URLlist.close()
+
+#List all the files in the EarthFromISS folder
+fileList = os.listdir(image_directory)
+
+#Print the number of photos downloaded this session, as well as the total number of photos
+print("Wow, those are some cool photos! We found and downloaded a total of " + str(len(PictureCounter)) + " pictures of the Earth! You've now downloaded a total of " + str(len(fileList)) + " unique photos!")
